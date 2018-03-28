@@ -14,7 +14,9 @@ fields:
         span: right
         placeholder: rainlab.blog::lang.category.slug_placeholder
         preset: name
-
+    color:
+        label: rainlab.blog::lang.category.color
+        type: colorpicker
     description:
         label: 'rainlab.blog::lang.category.description'
         size: large

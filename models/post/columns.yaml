@@ -3,7 +3,10 @@
 # ===================================
 
 columns:
-
+    cover:
+        label: Cover
+        type: partial
+        path: $/rainlab/blog/models/post/_cover.htm
     title:
         label: rainlab.blog::lang.post.title
         searchable: true

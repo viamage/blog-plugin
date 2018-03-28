@@ -1,0 +1,6 @@
+<?php
+$image = $record->getFeaturedImage();
+if($image){
+?>
+<img src="<?= $image->getThumb(240, 'auto'); ?>" />
+<?php } ?>

@@ -1,6 +1,7 @@
 <?php namespace RainLab\Blog\Models;
 
 use Db;
+use October\Rain\Database\Collection;
 use Url;
 use App;
 use Str;
@@ -50,22 +51,6 @@ class Post extends Model
      */
     protected $dates = ['published_at'];
 
-    /**
-     * The attributes on which the post list can be ordered
-     * @var array
-     */
-    public static $allowedSortingOptions = [
-        'title asc' => 'Title (ascending)',
-        'title desc' => 'Title (descending)',
-        'created_at asc' => 'Created (ascending)',
-        'created_at desc' => 'Created (descending)',
-        'updated_at asc' => 'Updated (ascending)',
-        'updated_at desc' => 'Updated (descending)',
-        'published_at asc' => 'Published (ascending)',
-        'published_at desc' => 'Published (descending)',
-        'random' => 'Random'
-    ];
-
     /*
      * Relations
      */
@@ -93,6 +78,23 @@ class Post extends Model
 
     public $preview = null;
 
+    public function getMainCategory(){
+        return $this->categories->first();
+    }
+
+    public function getMainCategorySlug(){
+        $category = $this->getMainCategory();
+        if($category){
+            return $category->slug;
+        }
+        return 'default';
+    }
+
+    public function getFeaturedImage(){
+        /** @var Collection $collection */
+        $collection = $this->featured_images;
+        return $collection->first();
+    }
     /**
      * Limit visibility of the published-button
      *

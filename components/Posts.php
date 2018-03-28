@@ -1,5 +1,7 @@
 <?php namespace RainLab\Blog\Components;
 
+use RainLab\Blog\Repositories\PostRepository;
+use RainLab\Blog\ValueObjects\PostFilters;
 use Redirect;
 use BackendAuth;
 use Cms\Classes\Page;
@@ -62,17 +64,11 @@ class Posts extends ComponentBase
     public function defineProperties()
     {
         return [
-            'pageNumber' => [
-                'title'       => 'rainlab.blog::lang.settings.posts_pagination',
-                'description' => 'rainlab.blog::lang.settings.posts_pagination_description',
-                'type'        => 'string',
-                'default'     => '{{ :page }}',
-            ],
             'categoryFilter' => [
                 'title'       => 'rainlab.blog::lang.settings.posts_filter',
                 'description' => 'rainlab.blog::lang.settings.posts_filter_description',
                 'type'        => 'string',
-                'default'     => ''
+                'default'     => '{{ :category }}'
             ],
             'postsPerPage' => [
                 'title'             => 'rainlab.blog::lang.settings.posts_per_page',
@@ -88,11 +84,15 @@ class Posts extends ComponentBase
                 'default'      => 'No posts found',
                 'showExternalParam' => false
             ],
-            'sortOrder' => [
+            'sort' => [
                 'title'       => 'rainlab.blog::lang.settings.posts_order',
                 'description' => 'rainlab.blog::lang.settings.posts_order_description',
-                'type'        => 'dropdown',
-                'default'     => 'published_at desc'
+                'default'     => 'published_at'
+            ],
+            'sort_type' => [
+                'title'       => 'rainlab.blog::lang.settings.posts_order_type',
+                'description' => 'rainlab.blog::lang.settings.posts_order_type_description',
+                'default'     => 'desc'
             ],
             'categoryPage' => [
                 'title'       => 'rainlab.blog::lang.settings.posts_category',
@@ -107,15 +107,6 @@ class Posts extends ComponentBase
                 'type'        => 'dropdown',
                 'default'     => 'blog/post',
                 'group'       => 'Links',
-            ],
-            'exceptPost' => [
-                'title'             => 'rainlab.blog::lang.settings.posts_except_post',
-                'description'       => 'rainlab.blog::lang.settings.posts_except_post_description',
-                'type'              => 'string',
-                'validationPattern' => 'string',
-                'validationMessage' => 'rainlab.blog::lang.settings.posts_except_post_validation',
-                'default'           => '',
-                'group'             => 'Exceptions',
             ],
         ];
     }
@@ -141,16 +132,14 @@ class Posts extends ComponentBase
 
         $this->category = $this->page['category'] = $this->loadCategory();
         $this->posts = $this->page['posts'] = $this->listPosts();
+        $currentPage = $this->posts->currentPage();
+        $maxPage = $this->posts->lastPage();
+        $this->page['currentPage'] = $currentPage;
+        $this->page['maxPage'] = $maxPage;
+    }
 
-        /*
-         * If the page number is not valid, redirect
-         */
-        if ($pageNumberParam = $this->paramName('pageNumber')) {
-            $currentPage = $this->property('pageNumber');
-
-            if ($currentPage > ($lastPage = $this->posts->lastPage()) && $currentPage > 1)
-                return Redirect::to($this->currentPageUrl([$pageNumberParam => $lastPage]));
-        }
+    public function getFeaturedImage(){
+        return $this->featured_images()->first();
     }
 
     protected function prepareVars()
@@ -167,23 +156,22 @@ class Posts extends ComponentBase
 
     protected function listPosts()
     {
-        $category = $this->category ? $this->category->id : null;
+        $category = $this->category ? $this->category->slug : null;
 
         /*
          * List all the posts, eager load their categories
          */
         $isPublished = !$this->checkEditor();
-
-        $posts = BlogPost::with('categories')->listFrontEnd([
-            'page'       => $this->property('pageNumber'),
-            'sort'       => $this->property('sortOrder'),
-            'perPage'    => $this->property('postsPerPage'),
-            'search'     => trim(input('search')),
-            'category'   => $category,
-            'published'  => $isPublished,
-            'exceptPost' => $this->property('exceptPost'),
-        ]);
-
+        /** @var PostRepository $repo */
+        $repo = \App::make(PostRepository::class);
+        $filters = new PostFilters();
+        $filters->sort       = $this->property('sort');
+        $filters->sortType = $this->property('sortType');
+        $filters->perPage    = $this->property('postsPerPage');
+        $filters->search     = trim(input('search'));
+        $filters->category   = $category;
+        $filters->published  = $isPublished;
+        $posts = $repo->getPaginated($filters);
         /*
          * Add a "url" helper attribute for linking to each post and category
          */

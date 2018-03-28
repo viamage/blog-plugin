@@ -4,6 +4,7 @@ use BackendAuth;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
 use RainLab\Blog\Models\Post as BlogPost;
+use RainLab\Blog\Repositories\PostRepository;
 
 class Post extends ComponentBase
 {
@@ -64,19 +65,9 @@ class Post extends ComponentBase
     protected function loadPost()
     {
         $slug = $this->property('slug');
-
-        $post = new BlogPost;
-
-        $post = $post->isClassExtendedWith('RainLab.Translate.Behaviors.TranslatableModel')
-            ? $post->transWhere('slug', $slug)
-            : $post->where('slug', $slug);
-
-        if (!$this->checkEditor()) {
-            $post = $post->isPublished();
-        }
-
-        $post = $post->first();
-
+        /** @var PostRepository $postRepo */
+        $postRepo = \App::make(PostRepository::class);
+        $post = $postRepo->getBySlug($slug, !$this->checkEditor());
         /*
          * Add a "url" helper attribute for linking to each category
          */
@@ -85,7 +76,6 @@ class Post extends ComponentBase
                 $category->setUrl($this->categoryPage, $this->controller);
             });
         }
-
         return $post;
     }
 
