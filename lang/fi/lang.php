@@ -3,7 +3,7 @@
 return [
     'plugin' => [
         'name' => 'Blogi',
-        'description' => 'Vankka bloggausalusta.'
+        'description' => 'Vankka bloggausalusta.',
     ],
     'blog' => [
         'menu_label' => 'Blogi',
@@ -21,7 +21,7 @@ return [
         'delete_confirm' => 'Olteko varma?',
         'chart_published' => 'Julkaistu',
         'chart_drafts' => 'Luonnokset',
-        'chart_total' => 'Yhteensä'
+        'chart_total' => 'Yhteensä',
     ],
     'posts' => [
         'list_title' => 'Hallitse blogipostauksia',
@@ -30,7 +30,7 @@ return [
         'filter_date' => 'Päivämäärä',
         'new_post' => 'Uusi postaus',
         'export_post' => 'Vie postaukset',
-        'import_post' => 'Tuo postauksia'
+        'import_post' => 'Tuo postauksia',
     ],
     'post' => [
         'title' => 'Otsikko',
@@ -59,12 +59,12 @@ return [
         'featured_images' => 'Esittelykuvat',
         'delete_confirm' => 'Poista tämä postaus?',
         'close_confirm' => 'Tämä postaus ei ole tallennettu.',
-        'return_to_posts' => 'Palaa postauslistaan'
+        'return_to_posts' => 'Palaa postauslistaan',
     ],
     'categories' => [
         'list_title' => 'Hallitse blogikategorioita',
         'new_category' => 'Uusi kategoria',
-        'uncategorized' => 'Luokittelematon'
+        'uncategorized' => 'Luokittelematon',
     ],
     'category' => [
         'name' => 'Nimi',
@@ -75,13 +75,16 @@ return [
         'posts' => 'Julkaisuja',
         'delete_confirm' => 'Poista tämä kategoria?',
         'return_to_categories' => 'Palaa blogikategorialistaan',
-        'reorder' => 'Järjestä kategoriat uudelleen'
+        'reorder' => 'Järjestä kategoriat uudelleen',
+        'color' => 'rainlab.blog::lang.category.color',
+        'icon' => 'rainlab.blog::lang.category.icon',
     ],
     'menuitem' => [
         'blog_category' => 'Blogikategoria',
         'all_blog_categories' => 'Kaikki blogikategoriat',
         'blog_post' => 'Blogipostaukset',
-        'all_blog_posts' => 'Kaikki blogipostaukset'
+        'all_blog_posts' => 'Kaikki blogipostaukset',
+        'category_blog_posts' => 'rainlab.blog::lang.menuitem.category_blog_posts',
     ],
     'settings' => [
         'category_title' => 'Kategorialista',
@@ -119,6 +122,10 @@ return [
         'rssfeed_blog' => 'Blogisivu',
         'rssfeed_blog_description' => 'Blogisivun tiedostonimi linkkien generointia varten. Oletuskomponenttiosa käyttää tätä ominaisuutta.',
         'rssfeed_title' => 'RSS syöte',
-        'rssfeed_description' => 'Generoi RSS syötteen sisältäen postaukset blogista.'
-    ]
+        'rssfeed_description' => 'Generoi RSS syötteen sisältäen postaukset blogista.',
+        'posts_order_type' => 'rainlab.blog::lang.settings.posts_order_type',
+        'posts_order_type_description' => 'rainlab.blog::lang.settings.posts_order_type_description',
+        'history_mode' => 'rainlab.blog::lang.settings.history_mode',
+        'history_mode_description' => 'rainlab.blog::lang.settings.history_mode_description',
+    ],
 ];

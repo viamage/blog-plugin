@@ -3,7 +3,7 @@
 return [
     'plugin' => [
         'name' => 'Blog',
-        'description' => 'Sağlam blog platformu.'
+        'description' => 'Sağlam blog platformu.',
     ],
     'blog' => [
         'menu_label' => 'Blog',
@@ -21,7 +21,7 @@ return [
         'delete_confirm' => 'Emin misiniz?',
         'chart_published' => 'Yayınlandı',
         'chart_drafts' => 'Taslaklar',
-        'chart_total' => 'Toplam'
+        'chart_total' => 'Toplam',
     ],
     'posts' => [
         'list_title' => 'Blog gönderilerini yönet',
@@ -59,12 +59,12 @@ return [
         'featured_images' => 'Öne Çıkan Görseller',
         'delete_confirm' => 'Bu yazıyı silmek istiyor musunuz?',
         'close_confirm' => 'Gönderi kaydedilmedi.',
-        'return_to_posts' => 'Gönderi listesine dön'
+        'return_to_posts' => 'Gönderi listesine dön',
     ],
     'categories' => [
         'list_title' => 'Kategorileri yönet',
         'new_category' => 'Yeni kategori',
-        'uncategorized' => 'Kategorisiz'
+        'uncategorized' => 'Kategorisiz',
     ],
     'category' => [
         'name' => 'İsim',
@@ -76,19 +76,21 @@ return [
         'delete_confirm' => 'Bu kategoriyi silmek istiyor musunuz?',
         'return_to_categories' => 'Kategori listesine dön',
         'reorder' => 'Kategorileri sırala',
+        'color' => 'rainlab.blog::lang.category.color',
+        'icon' => 'rainlab.blog::lang.category.icon',
     ],
     'menuitem' => [
         'blog_category' => 'Blog kategorisi',
         'all_blog_categories' => 'Tüm blog kategorileri',
         'blog_post' => 'Blog gönderisi',
         'all_blog_posts' => 'Tüm blog gönderileri',
-
+        'category_blog_posts' => 'rainlab.blog::lang.menuitem.category_blog_posts',
     ],
     'settings' => [
         'category_title' => 'Kategori Listesi',
         'category_description' => 'Kategorilerin listesini sayfada göster.',
         'category_slug' => 'Kategori Kısa URL',
-        'category_slug_description' => "Verilen kısa URLi kullanarak blog kategorisini görüntüle. Bu özellik şu anki aktif kategoriyi işaretlemek için varsayılan kısmi bileşeni tarafından  kullanılır",
+        'category_slug_description' => 'Verilen kısa URLi kullanarak blog kategorisini görüntüle. Bu özellik şu anki aktif kategoriyi işaretlemek için varsayılan kısmi bileşeni tarafından  kullanılır',
         'category_display_empty' => 'Boş kategorileri göster',
         'category_display_empty_description' => 'Herhangi bir gönderi olmayan kategorileri göster.',
         'category_page' => 'Kategori sayfası',
@@ -96,7 +98,7 @@ return [
         'post_title' => 'Gönderi',
         'post_description' => 'Sayfada bir gönderi göster',
         'post_slug' => 'Gönderi Kısa URL',
-        'post_slug_description' => "Verilen kısa URL ile gönderiye bakın.",
+        'post_slug_description' => 'Verilen kısa URL ile gönderiye bakın.',
         'post_category' => 'Kategori sayfası',
         'post_category_description' => 'Kategori bağlantıları için kategori sayfası dosyasının adı. Bu özellik varsayılan kısmi bileşeni tarafından kullanılır.',
         'posts_title' => 'Gönderi listesi',
@@ -120,6 +122,10 @@ return [
         'rssfeed_blog' => 'Blog sayfası',
         'rssfeed_blog_description' => 'Linkleri üretmek için blog sayfasının adını girin. Bu bilgi, ana component için kullanılacak.',
         'rssfeed_title' => 'RSS Beslemesi',
-        'rssfeed_description' => 'Blog içerisindeki gönderileri veren RSS beslemesi oluşturur.'
-    ]
+        'rssfeed_description' => 'Blog içerisindeki gönderileri veren RSS beslemesi oluşturur.',
+        'posts_order_type' => 'rainlab.blog::lang.settings.posts_order_type',
+        'posts_order_type_description' => 'rainlab.blog::lang.settings.posts_order_type_description',
+        'history_mode' => 'rainlab.blog::lang.settings.history_mode',
+        'history_mode_description' => 'rainlab.blog::lang.settings.history_mode_description',
+    ],
 ];

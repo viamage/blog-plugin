@@ -3,7 +3,7 @@
 return [
     'plugin' => [
         'name' => 'وبلاگ',
-        'description' => 'پلتفرم قوی برای وبلاگ نویسی'
+        'description' => 'پلتفرم قوی برای وبلاگ نویسی',
     ],
     'blog' => [
         'menu_label' => 'وبلاگ',
@@ -20,13 +20,17 @@ return [
         'delete_confirm' => 'آیا اطمینان دارید؟',
         'chart_published' => 'منتشر شده',
         'chart_drafts' => 'پیش نویس',
-        'chart_total' => 'مجموع'
+        'chart_total' => 'مجموع',
+        'access_publish' => 'rainlab.blog::lang.blog.access_publish',
     ],
     'posts' => [
         'list_title' => 'مدیریت پست های ارسالی',
         'filter_category' => 'دسته بندی',
         'filter_published' => 'مخفی کردن منتشر شده ها',
-        'new_post' => 'پست جدید'
+        'new_post' => 'پست جدید',
+        'import_post' => 'rainlab.blog::lang.posts.import_post',
+        'export_post' => 'rainlab.blog::lang.posts.export_post',
+        'filter_date' => 'rainlab.blog::lang.posts.filter_date',
     ],
     'post' => [
         'title' => 'عنوان',
@@ -55,12 +59,12 @@ return [
         'featured_images' => 'تصاویر شاخص',
         'delete_confirm' => 'آیا از حذف این پست اطمینان دارید؟',
         'close_confirm' => 'پست ذخیره نشده است',
-        'return_to_posts' => 'بازگشت به لیست پست ها'
+        'return_to_posts' => 'بازگشت به لیست پست ها',
     ],
     'categories' => [
         'list_title' => 'مدیریت دسته بندی های وبلاگ',
         'new_category' => 'دسته بندی جدید',
-        'uncategorized' => 'بدون دسته بندی'
+        'uncategorized' => 'بدون دسته بندی',
     ],
     'category' => [
         'name' => 'نام',
@@ -70,13 +74,16 @@ return [
         'posts' => 'پست ها',
         'delete_confirm' => 'آیا از حذف این دسته بندی اطمینان دارید؟',
         'return_to_categories' => 'بازگشت به لیست دسته بندی های وبلاگ',
-        'reorder' => 'مرتب سازی دسته بندی ها'
+        'reorder' => 'مرتب سازی دسته بندی ها',
+        'color' => 'rainlab.blog::lang.category.color',
+        'icon' => 'rainlab.blog::lang.category.icon',
+        'description' => 'rainlab.blog::lang.category.description',
     ],
     'settings' => [
         'category_title' => 'لیست دسته بندی',
         'category_description' => 'نمایش لیست دسته بندی های وبلاگ در صفحه',
         'category_slug' => 'آدرس دسته بندی',
-        'category_slug_description' => "دسته بندی وبلاگ توسط آدرس وارد شده جستجو می شود. این عمل توسط ابزار دسته بندی برای برجسته ساختن دسته بندی در حال نمایش استفاده می شود.",
+        'category_slug_description' => 'دسته بندی وبلاگ توسط آدرس وارد شده جستجو می شود. این عمل توسط ابزار دسته بندی برای برجسته ساختن دسته بندی در حال نمایش استفاده می شود.',
         'category_display_empty' => 'نمایش دسته بندی های خالی',
         'category_display_empty_description' => 'نمایش دسته بندی هایی که هیچ ارسالی در آنها وجود ندارد.',
         'category_page' => 'صفحه دسته بندی',
@@ -84,7 +91,7 @@ return [
         'post_title' => 'پست',
         'post_description' => 'نمایش پست در صفحه',
         'post_slug' => 'آدرس پست',
-        'post_slug_description' => "پست توسط آدرس وارد شده جستجو میشود.",
+        'post_slug_description' => 'پست توسط آدرس وارد شده جستجو میشود.',
         'post_category' => 'صفحه دسته بندی',
         'post_category_description' => 'نام صفحه ای که لیست دسته بندی ها در آن نمایش داده می شوند. این گزینه به طور پیشفرض توسط ابزار مورد استفاده قرار میگیرد.',
         'posts_title' => 'لیست پست ها',
@@ -105,5 +112,21 @@ return [
         'posts_post_description' => 'نام صفحه مربوط به نمایش کامل پست ها جهت لینک ادامه مطلب',
         'posts_except_post' => 'Except post',
         'posts_except_post_description' => 'Enter ID/URL or variable with post ID/URL you want to except',
-    ]
+        'posts_order_description' => 'rainlab.blog::lang.settings.posts_order_description',
+        'posts_order_type' => 'rainlab.blog::lang.settings.posts_order_type',
+        'posts_order_type_description' => 'rainlab.blog::lang.settings.posts_order_type_description',
+        'history_mode' => 'rainlab.blog::lang.settings.history_mode',
+        'history_mode_description' => 'rainlab.blog::lang.settings.history_mode_description',
+        'rssfeed_title' => 'rainlab.blog::lang.settings.rssfeed_title',
+        'rssfeed_description' => 'rainlab.blog::lang.settings.rssfeed_description',
+        'rssfeed_blog' => 'rainlab.blog::lang.settings.rssfeed_blog',
+        'rssfeed_blog_description' => 'rainlab.blog::lang.settings.rssfeed_blog_description',
+    ],
+    'menuitem' => [
+        'blog_category' => 'rainlab.blog::lang.menuitem.blog_category',
+        'all_blog_categories' => 'rainlab.blog::lang.menuitem.all_blog_categories',
+        'blog_post' => 'rainlab.blog::lang.menuitem.blog_post',
+        'all_blog_posts' => 'rainlab.blog::lang.menuitem.all_blog_posts',
+        'category_blog_posts' => 'rainlab.blog::lang.menuitem.category_blog_posts',
+    ],
 ];

@@ -77,7 +77,7 @@ class Categories extends ComponentBase
     protected function loadCategories()
     {
         if (!$this->property('displayEmpty')) {
-            $categories = BlogCategory::whereExists(function($query) {
+            $categories = BlogCategory::with('posts')->whereExists(function($query) {
                 $prefix = Db::getTablePrefix();
 
                 $query

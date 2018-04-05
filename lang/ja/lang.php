@@ -3,7 +3,7 @@
 return [
     'plugin' => [
         'name' => 'ブログ',
-        'description' => 'ロバストなブログプラットフォームです。'
+        'description' => 'ロバストなブログプラットフォームです。',
     ],
     'blog' => [
         'menu_label' => 'ブログ',
@@ -19,13 +19,18 @@ return [
         'delete_confirm' => '削除していいですか？',
         'chart_published' => '公開済み',
         'chart_drafts' => '下書き',
-        'chart_total' => '合計'
+        'chart_total' => '合計',
+        'access_import_export' => 'rainlab.blog::lang.blog.access_import_export',
+        'access_publish' => 'rainlab.blog::lang.blog.access_publish',
     ],
     'posts' => [
         'list_title' => '投稿の管理',
         'filter_category' => 'カテゴリ',
         'filter_published' => '下書きのみ',
-        'new_post' => '投稿を追加'
+        'new_post' => '投稿を追加',
+        'import_post' => 'rainlab.blog::lang.posts.import_post',
+        'export_post' => 'rainlab.blog::lang.posts.export_post',
+        'filter_date' => 'rainlab.blog::lang.posts.filter_date',
     ],
     'post' => [
         'title' => 'タイトル',
@@ -47,12 +52,18 @@ return [
         'featured_images' => 'アイキャッチ画像',
         'delete_confirm' => '削除していいですか？',
         'close_confirm' => '投稿は保存されていません。',
-        'return_to_posts' => '投稿一覧に戻る'
+        'return_to_posts' => '投稿一覧に戻る',
+        'content' => 'rainlab.blog::lang.post.content',
+        'author_email' => 'rainlab.blog::lang.post.author_email',
+        'created_date' => 'rainlab.blog::lang.post.created_date',
+        'updated_date' => 'rainlab.blog::lang.post.updated_date',
+        'published_date' => 'rainlab.blog::lang.post.published_date',
+        'content_html' => 'rainlab.blog::lang.post.content_html',
     ],
     'categories' => [
         'list_title' => 'カテゴリ管理',
         'new_category' => 'カテゴリの追加',
-        'uncategorized' => '未分類'
+        'uncategorized' => '未分類',
     ],
     'category' => [
         'name' => '名前',
@@ -61,13 +72,17 @@ return [
         'slug_placeholder' => 'new-category-slug-123',
         'posts' => '投稿数',
         'delete_confirm' => '削除していいですか？',
-        'return_to_categories' => 'カテゴリ一覧に戻る'
+        'return_to_categories' => 'カテゴリ一覧に戻る',
+        'reorder' => 'rainlab.blog::lang.category.reorder',
+        'color' => 'rainlab.blog::lang.category.color',
+        'icon' => 'rainlab.blog::lang.category.icon',
+        'description' => 'rainlab.blog::lang.category.description',
     ],
     'settings' => [
         'category_title' => 'カテゴリリスト',
         'category_description' => 'ページ内にカテゴリリストを表示します。',
         'category_slug' => 'カテゴリスラッグ',
-        'category_slug_description' => "表示するカテゴリのスラッグを指定します。この項目はコンポーネントのデフォルトパーシャルで使用されます。",
+        'category_slug_description' => '表示するカテゴリのスラッグを指定します。この項目はコンポーネントのデフォルトパーシャルで使用されます。',
         'category_display_empty' => '空のカテゴリの表示',
         'category_display_empty_description' => 'この項目がチェックされている場合、投稿が0件のカテゴリもリストに表示します。',
         'category_page' => 'カテゴリページ',
@@ -75,7 +90,7 @@ return [
         'post_title' => '投稿',
         'post_description' => 'ページ内に投稿を表示します。',
         'post_slug' => '投稿スラッグ',
-        'post_slug_description' => "表示する投稿のスラッグを指定します。特定の投稿のスラッグか、URLパラメータ(:slug)を指定できます。",
+        'post_slug_description' => '表示する投稿のスラッグを指定します。特定の投稿のスラッグか、URLパラメータ(:slug)を指定できます。',
         'post_category' => 'カテゴリページ',
         'post_category_description' => 'カテゴリリンクを生成するために、カテゴリページのファイル名を指定します。拡張子(.htm)は省いてください。この項目はコンポーネントのデフォルトパーシャルで使用されます。',
         'posts_title' => '投稿リスト',
@@ -96,5 +111,20 @@ return [
         'posts_post_description' => '"Learn more"リンクを生成するため、投稿ページのファイル名を指定します。拡張子(.htm)は省いてください。この項目はコンポーネントのデフォルトパーシャルで使用されます。',
         'posts_except_post' => 'Except post',
         'posts_except_post_description' => 'Enter ID/URL or variable with post ID/URL you want to except',
-    ]
+        'posts_order_type' => 'rainlab.blog::lang.settings.posts_order_type',
+        'posts_order_type_description' => 'rainlab.blog::lang.settings.posts_order_type_description',
+        'history_mode' => 'rainlab.blog::lang.settings.history_mode',
+        'history_mode_description' => 'rainlab.blog::lang.settings.history_mode_description',
+        'rssfeed_title' => 'rainlab.blog::lang.settings.rssfeed_title',
+        'rssfeed_description' => 'rainlab.blog::lang.settings.rssfeed_description',
+        'rssfeed_blog' => 'rainlab.blog::lang.settings.rssfeed_blog',
+        'rssfeed_blog_description' => 'rainlab.blog::lang.settings.rssfeed_blog_description',
+    ],
+    'menuitem' => [
+        'blog_category' => 'rainlab.blog::lang.menuitem.blog_category',
+        'all_blog_categories' => 'rainlab.blog::lang.menuitem.all_blog_categories',
+        'blog_post' => 'rainlab.blog::lang.menuitem.blog_post',
+        'all_blog_posts' => 'rainlab.blog::lang.menuitem.all_blog_posts',
+        'category_blog_posts' => 'rainlab.blog::lang.menuitem.category_blog_posts',
+    ],
 ];

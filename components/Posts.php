@@ -57,7 +57,7 @@ class Posts extends ComponentBase
     {
         return [
             'name'        => 'rainlab.blog::lang.settings.posts_title',
-            'description' => 'rainlab.blog::lang.settings.posts_description'
+            'description' => 'rainlab.blog::lang.settings.posts_description',
         ];
     }
 
@@ -68,9 +68,9 @@ class Posts extends ComponentBase
                 'title'       => 'rainlab.blog::lang.settings.posts_filter',
                 'description' => 'rainlab.blog::lang.settings.posts_filter_description',
                 'type'        => 'string',
-                'default'     => '{{ :category }}'
+                'default'     => '{{ :category }}',
             ],
-            'postsPerPage' => [
+            'postsPerPage'   => [
                 'title'             => 'rainlab.blog::lang.settings.posts_per_page',
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
@@ -78,30 +78,36 @@ class Posts extends ComponentBase
                 'default'           => '10',
             ],
             'noPostsMessage' => [
-                'title'        => 'rainlab.blog::lang.settings.posts_no_posts',
-                'description'  => 'rainlab.blog::lang.settings.posts_no_posts_description',
-                'type'         => 'string',
-                'default'      => 'No posts found',
-                'showExternalParam' => false
+                'title'             => 'rainlab.blog::lang.settings.posts_no_posts',
+                'description'       => 'rainlab.blog::lang.settings.posts_no_posts_description',
+                'type'              => 'string',
+                'default'           => 'No posts found',
+                'showExternalParam' => false,
             ],
-            'sort' => [
+            'sort'           => [
                 'title'       => 'rainlab.blog::lang.settings.posts_order',
                 'description' => 'rainlab.blog::lang.settings.posts_order_description',
-                'default'     => 'published_at'
+                'default'     => 'published_at',
             ],
-            'sort_type' => [
+            'sort_type'      => [
                 'title'       => 'rainlab.blog::lang.settings.posts_order_type',
                 'description' => 'rainlab.blog::lang.settings.posts_order_type_description',
-                'default'     => 'desc'
+                'default'     => 'desc',
             ],
-            'categoryPage' => [
+            'historyMode'    => [
+                'title'       => 'rainlab.blog::lang.settings.history_mode',
+                'description' => 'rainlab.blog::lang.settings.history_mode_description',
+                'type'        => 'checkbox',
+                'default'     => false,
+            ],
+            'categoryPage'   => [
                 'title'       => 'rainlab.blog::lang.settings.posts_category',
                 'description' => 'rainlab.blog::lang.settings.posts_category_description',
                 'type'        => 'dropdown',
                 'default'     => 'blog/category',
                 'group'       => 'Links',
             ],
-            'postPage' => [
+            'postPage'       => [
                 'title'       => 'rainlab.blog::lang.settings.posts_post',
                 'description' => 'rainlab.blog::lang.settings.posts_post_description',
                 'type'        => 'dropdown',
@@ -126,19 +132,31 @@ class Posts extends ComponentBase
         return BlogPost::$allowedSortingOptions;
     }
 
+    public $history;
+
     public function onRun()
     {
         $this->prepareVars();
-
-        $this->category = $this->page['category'] = $this->loadCategory();
-        $this->posts = $this->page['posts'] = $this->listPosts();
-        $currentPage = $this->posts->currentPage();
-        $maxPage = $this->posts->lastPage();
-        $this->page['currentPage'] = $currentPage;
-        $this->page['maxPage'] = $maxPage;
+        if ($this->property('historyMode')) {
+            $this->history = $this->page['history'] = $this->getHistory();
+        } else {
+            $this->category = $this->page['category'] = $this->loadCategory();
+            $this->posts = $this->page['posts'] = $this->listPosts();
+            $currentPage = $this->posts->currentPage();
+            $maxPage = $this->posts->lastPage();
+            $this->page['currentPage'] = $currentPage;
+            $this->page['maxPage'] = $maxPage;
+        }
     }
 
-    public function getFeaturedImage(){
+    public function getHistory(){
+        $repo = \App::make(PostRepository::class);
+
+        return $repo->getHistoryPosts();
+    }
+
+    public function getFeaturedImage()
+    {
         return $this->featured_images()->first();
     }
 
@@ -165,23 +183,27 @@ class Posts extends ComponentBase
         /** @var PostRepository $repo */
         $repo = \App::make(PostRepository::class);
         $filters = new PostFilters();
-        $filters->sort       = $this->property('sort');
+        $filters->sort = $this->property('sort');
         $filters->sortType = $this->property('sortType');
-        $filters->perPage    = $this->property('postsPerPage');
-        $filters->search     = trim(input('search'));
-        $filters->category   = $category;
-        $filters->published  = $isPublished;
+        $filters->perPage = $this->property('postsPerPage');
+        $filters->search = trim(input('search'));
+        $filters->category = $category;
+        $filters->published = $isPublished;
         $posts = $repo->getPaginated($filters);
         /*
          * Add a "url" helper attribute for linking to each post and category
          */
-        $posts->each(function($post) {
-            $post->setUrl($this->postPage, $this->controller);
+        $posts->each(
+            function ($post) {
+                $post->setUrl($this->postPage, $this->controller);
 
-            $post->categories->each(function($category) {
-                $category->setUrl($this->categoryPage, $this->controller);
-            });
-        });
+                $post->categories->each(
+                    function ($category) {
+                        $category->setUrl($this->categoryPage, $this->controller);
+                    }
+                );
+            }
+        );
 
         return $posts;
     }
@@ -206,6 +228,7 @@ class Posts extends ComponentBase
     protected function checkEditor()
     {
         $backendUser = BackendAuth::getUser();
+
         return $backendUser && $backendUser->hasAccess('rainlab.blog.access_posts');
     }
 }

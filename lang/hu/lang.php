@@ -3,7 +3,7 @@
 return [
     'plugin' => [
         'name' => 'Blog',
-        'description' => 'Teljeskörű blog alkalmazás.'
+        'description' => 'Teljeskörű blog alkalmazás.',
     ],
     'blog' => [
         'menu_label' => 'Blog',
@@ -21,7 +21,7 @@ return [
         'delete_confirm' => 'Törölni akarja a kijelölt bejegyzéseket?',
         'chart_published' => 'Közzétéve',
         'chart_drafts' => 'Piszkozatok',
-        'chart_total' => 'Összesen'
+        'chart_total' => 'Összesen',
     ],
     'posts' => [
         'list_title' => 'Blog bejegyzések',
@@ -30,7 +30,7 @@ return [
         'filter_date' => 'Létrehozva',
         'new_post' => 'Új bejegyzés',
         'export_post' => 'Exportálás',
-        'import_post' => 'Importálás'
+        'import_post' => 'Importálás',
     ],
     'post' => [
         'title' => 'Cím',
@@ -59,12 +59,12 @@ return [
         'featured_images' => 'Kiemelt képek',
         'delete_confirm' => 'Valóban törölni akarja ezt a bejegyzést?',
         'close_confirm' => 'A bejegyzés nem került mentésre.',
-        'return_to_posts' => 'Vissza a bejegyzésekhez'
+        'return_to_posts' => 'Vissza a bejegyzésekhez',
     ],
     'categories' => [
         'list_title' => 'Blog kategóriák',
         'new_category' => 'Új kategória',
-        'uncategorized' => 'Nincs kategorizálva'
+        'uncategorized' => 'Nincs kategorizálva',
     ],
     'category' => [
         'name' => 'Név',
@@ -75,13 +75,16 @@ return [
         'posts' => 'Bejegyzések',
         'delete_confirm' => 'Valóban törölni akarja ezt a kategóriát?',
         'return_to_categories' => 'Vissza a kategóriákhoz',
-        'reorder' => 'Kategóriák sorrendje'
+        'reorder' => 'Kategóriák sorrendje',
+        'color' => 'rainlab.blog::lang.category.color',
+        'icon' => 'rainlab.blog::lang.category.icon',
     ],
     'menuitem' => [
         'blog_category' => 'Blog kategória',
         'all_blog_categories' => 'Összes blog kategória',
         'blog_post' => 'Blog bejegyzés',
-        'all_blog_posts' => 'Összes blog bejegyzés'
+        'all_blog_posts' => 'Összes blog bejegyzés',
+        'category_blog_posts' => 'rainlab.blog::lang.menuitem.category_blog_posts',
     ],
     'settings' => [
         'category_title' => 'Blog kategória lista',
@@ -119,6 +122,10 @@ return [
         'rssfeed_blog' => 'Blog oldal',
         'rssfeed_blog_description' => 'Annak a lapnak a neve, ahol listázódnak a blog bejegyzések. Ezt a beállítást használja alapértelmezetten a blog komponens is.',
         'rssfeed_title' => 'RSS hírfolyam',
-        'rssfeed_description' => 'A bloghoz tartozó RSS hírfolyam generálása.'
-    ]
+        'rssfeed_description' => 'A bloghoz tartozó RSS hírfolyam generálása.',
+        'posts_order_type' => 'rainlab.blog::lang.settings.posts_order_type',
+        'posts_order_type_description' => 'rainlab.blog::lang.settings.posts_order_type_description',
+        'history_mode' => 'rainlab.blog::lang.settings.history_mode',
+        'history_mode_description' => 'rainlab.blog::lang.settings.history_mode_description',
+    ],
 ];

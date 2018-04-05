@@ -3,7 +3,7 @@
 return [
     'plugin' => [
         'name' => 'Блог',
-        'description' => 'Надежная блоговая-платформа.'
+        'description' => 'Надежная блоговая-платформа.',
     ],
     'blog' => [
         'menu_label' => 'Блог',
@@ -20,13 +20,18 @@ return [
         'chart_published' => 'Опубликовано',
         'chart_drafts' => 'Черновики',
         'chart_total' => 'Всего',
-        'new_category' => 'Новая категория'
+        'new_category' => 'Новая категория',
+        'access_import_export' => 'rainlab.blog::lang.blog.access_import_export',
+        'access_publish' => 'rainlab.blog::lang.blog.access_publish',
     ],
     'posts' => [
         'list_title' => 'Управление записями блога',
         'filter_category' => 'Категория',
         'filter_published' => 'Скрыть опубликованные',
-        'new_post' => 'Новая запись'
+        'new_post' => 'Новая запись',
+        'import_post' => 'rainlab.blog::lang.posts.import_post',
+        'export_post' => 'rainlab.blog::lang.posts.export_post',
+        'filter_date' => 'rainlab.blog::lang.posts.filter_date',
     ],
     'post' => [
         'title' => 'Заголовок',
@@ -55,12 +60,12 @@ return [
         'featured_images' => 'Тематические изображения',
         'delete_confirm' => 'Вы действительно хотите удалить эту запись?',
         'close_confirm' => 'Запись не была сохранена.',
-        'return_to_posts' => 'Вернуться к списку записей'
+        'return_to_posts' => 'Вернуться к списку записей',
     ],
     'categories' => [
         'list_title' => 'Управление категориями блога',
         'new_category' => 'Новая категория',
-        'uncategorized' => 'Без категории'
+        'uncategorized' => 'Без категории',
     ],
     'category' => [
         'name' => 'Название',
@@ -70,7 +75,10 @@ return [
         'posts' => 'Записи',
         'delete_confirm' => 'Вы действительно хотите удалить эту категорию?',
         'return_to_categories' => 'Вернуться к списку категорий',
-        'reorder' => 'Порядок категорий'
+        'reorder' => 'Порядок категорий',
+        'color' => 'rainlab.blog::lang.category.color',
+        'icon' => 'rainlab.blog::lang.category.icon',
+        'description' => 'rainlab.blog::lang.category.description',
     ],
     'settings' => [
         'category_title' => 'Список категорий блога',
@@ -105,5 +113,20 @@ return [
         'posts_post_description' => 'Название страницы для ссылки "подробнее". Это свойство используется по умолчанию компонентом.',
         'posts_except_post' => 'Except post',
         'posts_except_post_description' => 'Enter ID/URL or variable with post ID/URL you want to except',
-    ]
+        'posts_order_type' => 'rainlab.blog::lang.settings.posts_order_type',
+        'posts_order_type_description' => 'rainlab.blog::lang.settings.posts_order_type_description',
+        'history_mode' => 'rainlab.blog::lang.settings.history_mode',
+        'history_mode_description' => 'rainlab.blog::lang.settings.history_mode_description',
+        'rssfeed_title' => 'rainlab.blog::lang.settings.rssfeed_title',
+        'rssfeed_description' => 'rainlab.blog::lang.settings.rssfeed_description',
+        'rssfeed_blog' => 'rainlab.blog::lang.settings.rssfeed_blog',
+        'rssfeed_blog_description' => 'rainlab.blog::lang.settings.rssfeed_blog_description',
+    ],
+    'menuitem' => [
+        'blog_category' => 'rainlab.blog::lang.menuitem.blog_category',
+        'all_blog_categories' => 'rainlab.blog::lang.menuitem.all_blog_categories',
+        'blog_post' => 'rainlab.blog::lang.menuitem.blog_post',
+        'all_blog_posts' => 'rainlab.blog::lang.menuitem.all_blog_posts',
+        'category_blog_posts' => 'rainlab.blog::lang.menuitem.category_blog_posts',
+    ],
 ];

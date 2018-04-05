@@ -3,7 +3,7 @@
 return [
     'plugin' => [
         'name' => 'Blog',
-        'description' => 'Una solida piattaforma di blogging.'
+        'description' => 'Una solida piattaforma di blogging.',
     ],
     'blog' => [
         'menu_label' => 'Blog',
@@ -20,13 +20,19 @@ return [
         'delete_confirm' => 'Sei sicuro?',
         'chart_published' => 'Pubblicato',
         'chart_drafts' => 'Bozze',
-        'chart_total' => 'Totale'
+        'chart_total' => 'Totale',
+        'access_publish' => 'rainlab.blog::lang.blog.access_publish',
     ],
     'posts' => [
         'list_title' => 'Gestisci i post',
         'category' => 'Categoria',
         'hide_published' => 'Nascondi pubblicati',
-        'new_post' => 'Nuovo post'
+        'new_post' => 'Nuovo post',
+        'import_post' => 'rainlab.blog::lang.posts.import_post',
+        'export_post' => 'rainlab.blog::lang.posts.export_post',
+        'filter_category' => 'rainlab.blog::lang.posts.filter_category',
+        'filter_published' => 'rainlab.blog::lang.posts.filter_published',
+        'filter_date' => 'rainlab.blog::lang.posts.filter_date',
     ],
     'post' => [
         'title' => 'Titolo',
@@ -55,12 +61,12 @@ return [
         'featured_images' => 'Immagini in evidenza',
         'delete_confirm' => 'Vuoi veramente cancellare questo post?',
         'close_confirm' => 'Questo post non è salvato.',
-        'return_to_posts' => 'Ritorna all\'elenco dei post'
+        'return_to_posts' => 'Ritorna all\'elenco dei post',
     ],
     'categories' => [
         'list_title' => 'Gestisci le categorie del blog',
         'new_category' => 'Nuova categoria',
-        'uncategorized' => 'Non categorizzato'
+        'uncategorized' => 'Non categorizzato',
     ],
     'category' => [
         'name' => 'Nome',
@@ -70,13 +76,16 @@ return [
         'posts' => 'Post',
         'delete_confirm' => 'Vuoi veramente cancellare questa categoria?',
         'return_to_categories' => 'Ritorna all\'elenco delle categorie del blog',
-        'reorder' => 'Riordino Categorie'
+        'reorder' => 'Riordino Categorie',
+        'color' => 'rainlab.blog::lang.category.color',
+        'icon' => 'rainlab.blog::lang.category.icon',
+        'description' => 'rainlab.blog::lang.category.description',
     ],
     'settings' => [
         'category_title' => 'Elenco Categorie',
         'category_description' => 'Mostra un\'elenco delle categorie del blog sulla pagina.',
         'category_slug' => 'Slug categoria',
-        'category_slug_description' => "Cerca la categoria del blog usando lo slug fornito. Questa proprietà è usata dal componente parziale di default per segnare la categoria attualmente usata.",
+        'category_slug_description' => 'Cerca la categoria del blog usando lo slug fornito. Questa proprietà è usata dal componente parziale di default per segnare la categoria attualmente usata.',
         'category_display_empty' => 'Mostra categorie vuote',
         'category_display_empty_description' => 'Mostra categorie che non hanno alcun post.',
         'category_page' => 'Pagina delle categorie',
@@ -84,7 +93,7 @@ return [
         'post_title' => 'Post',
         'post_description' => 'Mostra un post sulla pagina.',
         'post_slug' => 'Slug del post',
-        'post_slug_description' => "Cerca il post con lo slug fornito.",
+        'post_slug_description' => 'Cerca il post con lo slug fornito.',
         'post_category' => 'Pagina delle categorie',
         'post_category_description' => 'Nome del file della pagina delle categorie contenente i link delle categorie. Questa proprietà è usata dal componente parziale di default.',
         'posts_title' => 'Elenco dei post',
@@ -102,6 +111,21 @@ return [
         'posts_category' => 'Pagina delle categorie',
         'posts_category_description' => 'Nome del file per la pagina delle categorie per i link "Postato in" alle categorie. Questa proprietà è usata dal componente parziale di default.',
         'posts_post' => 'Pagina del post',
-        'posts_post_description' => 'Nome del file per la pagina del post per i link "Scopri di più". Questa proprietà è usata dal componente parziale di default.'
-    ]
+        'posts_post_description' => 'Nome del file per la pagina del post per i link "Scopri di più". Questa proprietà è usata dal componente parziale di default.',
+        'posts_order_type' => 'rainlab.blog::lang.settings.posts_order_type',
+        'posts_order_type_description' => 'rainlab.blog::lang.settings.posts_order_type_description',
+        'history_mode' => 'rainlab.blog::lang.settings.history_mode',
+        'history_mode_description' => 'rainlab.blog::lang.settings.history_mode_description',
+        'rssfeed_title' => 'rainlab.blog::lang.settings.rssfeed_title',
+        'rssfeed_description' => 'rainlab.blog::lang.settings.rssfeed_description',
+        'rssfeed_blog' => 'rainlab.blog::lang.settings.rssfeed_blog',
+        'rssfeed_blog_description' => 'rainlab.blog::lang.settings.rssfeed_blog_description',
+    ],
+    'menuitem' => [
+        'blog_category' => 'rainlab.blog::lang.menuitem.blog_category',
+        'all_blog_categories' => 'rainlab.blog::lang.menuitem.all_blog_categories',
+        'blog_post' => 'rainlab.blog::lang.menuitem.blog_post',
+        'all_blog_posts' => 'rainlab.blog::lang.menuitem.all_blog_posts',
+        'category_blog_posts' => 'rainlab.blog::lang.menuitem.category_blog_posts',
+    ],
 ];

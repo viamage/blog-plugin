@@ -29,6 +29,27 @@ use RainLab\Blog\ValueObjects\PostFilters;
 
 class PostRepository
 {
+
+    public function getMonthName($id){
+        $arr = [
+          1 => trans('rainlab.blog::lang.months.jan'),
+          2 => trans('rainlab.blog::lang.months.feb'),
+          3 => trans('rainlab.blog::lang.months.mar'),
+          4 => trans('rainlab.blog::lang.months.apr'),
+          5 => trans('rainlab.blog::lang.months.may'),
+          6 => trans('rainlab.blog::lang.months.jun'),
+          7 => trans('rainlab.blog::lang.months.jul'),
+          8 => trans('rainlab.blog::lang.months.aug'),
+          9 => trans('rainlab.blog::lang.months.sep'),
+          10 => trans('rainlab.blog::lang.months.oct'),
+          11 => trans('rainlab.blog::lang.months.nov'),
+          12 => trans('rainlab.blog::lang.months.dec'),
+        ];
+        if(array_key_exists($id, $arr)){
+            return $arr[$id];
+        }
+    }
+
     public function getPaginated(PostFilters $filters){
         $query = Post::with('categories')->with('featured_images');
         if($filters->category){
@@ -42,6 +63,17 @@ class PostRepository
 
         return $query->orderBy($filters->sort, $filters->sortType)->paginate($filters->perPage);
 
+    }
+
+    public function getHistoryPosts(){
+        $data = \DB::table('rainlab_blog_posts')->where('published', true)->where('published_at', '<=', Carbon::now())
+            ->select('published_at', 'title', 'slug')->get();
+        $result = [];
+        foreach($data as $post){
+            $date = new Carbon($post->published_at);
+            $result[$date->year][$this->getMonthName($date->month)] = $post;
+        }
+        return $result;
     }
 
     public function getBySlug(string $slug, bool $published = true){

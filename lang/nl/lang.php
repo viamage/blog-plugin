@@ -3,7 +3,7 @@
 return [
     'plugin' => [
         'name' => 'Blog',
-        'description' => 'A robust blogging platform.'
+        'description' => 'A robust blogging platform.',
     ],
     'blog' => [
         'menu_label' => 'Blog',
@@ -20,13 +20,17 @@ return [
         'delete_confirm' => 'Weet je het zeker?',
         'chart_published' => 'Gepubliceerd',
         'chart_drafts' => 'Concepten',
-        'chart_total' => 'Totaal'
+        'chart_total' => 'Totaal',
+        'access_publish' => 'rainlab.blog::lang.blog.access_publish',
     ],
     'posts' => [
         'list_title' => 'Beheren van blog artikelen',
         'filter_category' => 'Categorie',
         'filter_published' => 'Verberg gepubliceerd',
-        'new_post' => 'Nieuw artikel'
+        'new_post' => 'Nieuw artikel',
+        'import_post' => 'rainlab.blog::lang.posts.import_post',
+        'export_post' => 'rainlab.blog::lang.posts.export_post',
+        'filter_date' => 'rainlab.blog::lang.posts.filter_date',
     ],
     'post' => [
         'title' => 'Titel',
@@ -55,12 +59,12 @@ return [
         'featured_images' => 'Uitgelichte afbeelding',
         'delete_confirm' => 'Weet je zeker dat je dit artikel wilt verwijderen?',
         'close_confirm' => 'Artikel is nog niet opgeslagen.',
-        'return_to_posts' => 'Terug naar artikel overzicht'
+        'return_to_posts' => 'Terug naar artikel overzicht',
     ],
     'categories' => [
         'list_title' => 'Beheer blog categorieën',
         'new_category' => 'Nieuwe categorie',
-        'uncategorized' => 'Ongecategoriseerd'
+        'uncategorized' => 'Ongecategoriseerd',
     ],
     'category' => [
         'name' => 'Naam',
@@ -69,7 +73,11 @@ return [
         'slug_placeholder' => 'nieuw-categorie-slug',
         'posts' => 'Artikelen',
         'delete_confirm' => 'Weet je zeker dat je deze categorie wilt verwijderen?',
-        'return_to_categories' => 'Terug naar categorie overzicht'
+        'return_to_categories' => 'Terug naar categorie overzicht',
+        'reorder' => 'rainlab.blog::lang.category.reorder',
+        'color' => 'rainlab.blog::lang.category.color',
+        'icon' => 'rainlab.blog::lang.category.icon',
+        'description' => 'rainlab.blog::lang.category.description',
     ],
     'settings' => [
         'category_title' => 'Categorie overzicht',
@@ -104,5 +112,20 @@ return [
         'posts_post_description' => 'Naam van blog pagina bestand voor de "Lees meer" links. Deze waarde wordt standaard gebruikt door de partial.',
         'posts_except_post' => 'Except post',
         'posts_except_post_description' => 'Enter ID/URL or variable with post ID/URL you want to except',
-    ]
+        'posts_order_type' => 'rainlab.blog::lang.settings.posts_order_type',
+        'posts_order_type_description' => 'rainlab.blog::lang.settings.posts_order_type_description',
+        'history_mode' => 'rainlab.blog::lang.settings.history_mode',
+        'history_mode_description' => 'rainlab.blog::lang.settings.history_mode_description',
+        'rssfeed_title' => 'rainlab.blog::lang.settings.rssfeed_title',
+        'rssfeed_description' => 'rainlab.blog::lang.settings.rssfeed_description',
+        'rssfeed_blog' => 'rainlab.blog::lang.settings.rssfeed_blog',
+        'rssfeed_blog_description' => 'rainlab.blog::lang.settings.rssfeed_blog_description',
+    ],
+    'menuitem' => [
+        'blog_category' => 'rainlab.blog::lang.menuitem.blog_category',
+        'all_blog_categories' => 'rainlab.blog::lang.menuitem.all_blog_categories',
+        'blog_post' => 'rainlab.blog::lang.menuitem.blog_post',
+        'all_blog_posts' => 'rainlab.blog::lang.menuitem.all_blog_posts',
+        'category_blog_posts' => 'rainlab.blog::lang.menuitem.category_blog_posts',
+    ],
 ];

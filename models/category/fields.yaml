@@ -17,6 +17,10 @@ fields:
     color:
         label: rainlab.blog::lang.category.color
         type: colorpicker
+        span: left
+    icon:
+        label: rainlab.blog::lang.category.icon
+        span: right
     description:
         label: 'rainlab.blog::lang.category.description'
         size: large

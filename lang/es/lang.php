@@ -3,7 +3,7 @@
 return [
     'plugin' => [
         'name' => 'Blog',
-        'description' => 'Una plataforma robusta de blogging.'
+        'description' => 'Una plataforma robusta de blogging.',
     ],
     'blog' => [
         'menu_label' => 'Blog',
@@ -21,7 +21,7 @@ return [
         'delete_confirm' => 'Esta seguro?',
         'chart_published' => 'Publicado',
         'chart_drafts' => 'Borradores',
-        'chart_total' => 'Total'
+        'chart_total' => 'Total',
     ],
     'posts' => [
         'list_title' => 'Administrar posteos',
@@ -30,7 +30,7 @@ return [
         'filter_date' => 'Fecha',
         'new_post' => 'Nuevo Posteo',
         'export_post' => 'Exportar posteos',
-        'import_post' => 'Importar posteos'
+        'import_post' => 'Importar posteos',
     ],
     'post' => [
         'title' => 'Título',
@@ -59,12 +59,12 @@ return [
         'featured_images' => 'Imágenes Destacadas',
         'delete_confirm' => 'Borrar el posteo?',
         'close_confirm' => 'El posteo no esta guardado.',
-        'return_to_posts' => 'Volver a la lista de posteos'
+        'return_to_posts' => 'Volver a la lista de posteos',
     ],
     'categories' => [
         'list_title' => 'Administrar las categorías',
         'new_category' => 'Nueva categoría',
-        'uncategorized' => 'No Categorizado'
+        'uncategorized' => 'No Categorizado',
     ],
     'category' => [
         'name' => 'Nombre',
@@ -75,19 +75,22 @@ return [
         'posts' => 'Posteos',
         'delete_confirm' => 'Borrar esta categoría?',
         'return_to_categories' => 'Volver a la lista de categorías',
-        'reorder' => 'Re-ordenar Categorías'
+        'reorder' => 'Re-ordenar Categorías',
+        'color' => 'rainlab.blog::lang.category.color',
+        'icon' => 'rainlab.blog::lang.category.icon',
     ],
     'menuitem' => [
         'blog_category' => 'Categoría de blog',
         'all_blog_categories' => 'Todas las categorías de blog',
         'blog_post' => 'Posteo de blog',
-        'all_blog_posts' => 'Todos los posteos de blog'
+        'all_blog_posts' => 'Todos los posteos de blog',
+        'category_blog_posts' => 'rainlab.blog::lang.menuitem.category_blog_posts',
     ],
     'settings' => [
         'category_title' => 'Lista de Categorías',
         'category_description' => 'Muestra en la página una lista de las categorías.',
         'category_slug' => 'Identificador de la categoría',
-        'category_slug_description' => "Localiza una categoría utilizando el identificador proporcionado. Esta propiedad es utilizada dentro del parcial que viene por defecto en el componente para marcar la categoría activa.",
+        'category_slug_description' => 'Localiza una categoría utilizando el identificador proporcionado. Esta propiedad es utilizada dentro del parcial que viene por defecto en el componente para marcar la categoría activa.',
         'category_display_empty' => 'Mostrar categorías vacías',
         'category_display_empty_description' => 'Mostrar categorías que no tienen ningún posteo.',
         'category_page' => 'Página de categorías',
@@ -95,7 +98,7 @@ return [
         'post_title' => 'Posteo',
         'post_description' => 'Muestra un posteo en la página.',
         'post_slug' => 'Identificador del posteo',
-        'post_slug_description' => "Se buscará el posteo utilizando el valor del identificador proporcionado.",
+        'post_slug_description' => 'Se buscará el posteo utilizando el valor del identificador proporcionado.',
         'post_category' => 'Página de categoría',
         'post_category_description' => 'Nombre del archivo de página utilizado para los enlaces de categorías. Esta propiedad es utilizada dentro del parcial que viene por defecto en el componente.',
         'posts_title' => 'Lista de Posteos',
@@ -119,6 +122,10 @@ return [
         'rssfeed_blog' => 'Página del blog',
         'rssfeed_blog_description' => 'Nombre del archivo de página principal para generación de enlaces. Esta propiedad es utilizada dentro del parcial que viene por defecto en el componente.',
         'rssfeed_title' => 'RSS Feed',
-        'rssfeed_description' => 'Genera un feed RSS que contiene posteos del blog.'
-    ]
+        'rssfeed_description' => 'Genera un feed RSS que contiene posteos del blog.',
+        'posts_order_type' => 'rainlab.blog::lang.settings.posts_order_type',
+        'posts_order_type_description' => 'rainlab.blog::lang.settings.posts_order_type_description',
+        'history_mode' => 'rainlab.blog::lang.settings.history_mode',
+        'history_mode_description' => 'rainlab.blog::lang.settings.history_mode_description',
+    ],
 ];

@@ -3,7 +3,7 @@
 return [
     'plugin' => [
         'name' => 'Blog',
-        'description' => 'Robustní blogová platforma.'
+        'description' => 'Robustní blogová platforma.',
     ],
     'blog' => [
         'menu_label' => 'Blog',
@@ -75,16 +75,22 @@ return [
         'delete_confirm' => 'Opravdu chcete smazat tuto kategorii?',
         'return_to_categories' => 'Zpět na seznam blogových kategorií',
         'reorder' => 'Změnit pořadí',
+        'color' => 'rainlab.blog::lang.category.color',
+        'icon' => 'rainlab.blog::lang.category.icon',
+        'description' => 'rainlab.blog::lang.category.description',
     ],
     'menuitem' => [
         'blog_category' => 'Blogová kategorie',
         'all_blog_categories' => 'Všechny blogové kategorie',
+        'blog_post' => 'rainlab.blog::lang.menuitem.blog_post',
+        'all_blog_posts' => 'rainlab.blog::lang.menuitem.all_blog_posts',
+        'category_blog_posts' => 'rainlab.blog::lang.menuitem.category_blog_posts',
     ],
     'settings' => [
         'category_title' => 'Seznam kategorií',
         'category_description' => 'Zobrazí na stránce seznam blogových kategorií.',
         'category_slug' => 'URL kategorie',
-        'category_slug_description' => "Najde blogovou kategorii s tímto URL. Používá se pro zobrazení aktivní kategorie.",
+        'category_slug_description' => 'Najde blogovou kategorii s tímto URL. Používá se pro zobrazení aktivní kategorie.',
         'category_display_empty' => 'Zobrazit prázdné kategorie',
         'category_display_empty_description' => 'Zobrazit kategorie bez blogových příspěvků.',
         'category_page' => 'Stránka kategorií',
@@ -92,7 +98,7 @@ return [
         'post_title' => 'Příspěvek',
         'post_description' => 'Zobrazí blogový příspěvek na stránce.',
         'post_slug' => 'URL příspěvku',
-        'post_slug_description' => "Najde příspěvek dle zadané URL.",
+        'post_slug_description' => 'Najde příspěvek dle zadané URL.',
         'post_category' => 'Stránka kategorie',
         'post_category_description' => 'Vyberte stránku která slouží k zobrazení všech kategorií (nebo detailu kategorie).',
         'posts_title' => 'Seznam příspěvků',
@@ -117,5 +123,10 @@ return [
         'rssfeed_blog_description' => 'Name of the main blog page file for generating links. This property is used by the default component partial.',
         'rssfeed_title' => 'RSS Kanál',
         'rssfeed_description' => 'Vygeneruje RSS kanál který obsahuje blogové příspěvky.',
-    ]
+        'posts_order_description' => 'rainlab.blog::lang.settings.posts_order_description',
+        'posts_order_type' => 'rainlab.blog::lang.settings.posts_order_type',
+        'posts_order_type_description' => 'rainlab.blog::lang.settings.posts_order_type_description',
+        'history_mode' => 'rainlab.blog::lang.settings.history_mode',
+        'history_mode_description' => 'rainlab.blog::lang.settings.history_mode_description',
+    ],
 ];

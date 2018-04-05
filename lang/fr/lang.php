@@ -3,7 +3,7 @@
 return [
     'plugin' => [
         'name' => 'Blog',
-        'description' => 'Une plateforme de blog robuste.'
+        'description' => 'Une plateforme de blog robuste.',
     ],
     'blog' => [
         'menu_label' => 'Blog',
@@ -21,7 +21,7 @@ return [
         'delete_confirm' => 'Confirmez-vous la suppression des articles sélectionnés ?',
         'chart_published' => 'Publié',
         'chart_drafts' => 'Brouillons',
-        'chart_total' => 'Total'
+        'chart_total' => 'Total',
     ],
     'posts' => [
         'list_title' => 'Gérer les articles du blog',
@@ -30,7 +30,7 @@ return [
         'filter_date' => 'Date',
         'new_post' => 'Nouvel article',
         'export_post' => 'Exporter les articles',
-        'import_post' => 'Importer des articles'
+        'import_post' => 'Importer des articles',
     ],
     'post' => [
         'title' => 'Titre',
@@ -59,12 +59,12 @@ return [
         'featured_images' => 'Image de promotion',
         'delete_confirm' => 'Confirmez-vous la suppression de cet article ?',
         'close_confirm' => 'L’article n’est pas enregistré.',
-        'return_to_posts' => 'Retour à la liste des articles'
+        'return_to_posts' => 'Retour à la liste des articles',
     ],
     'categories' => [
         'list_title' => 'Gérer les catégories',
         'new_category' => 'Nouvelle catégorie',
-        'uncategorized' => 'Non catégorisé'
+        'uncategorized' => 'Non catégorisé',
     ],
     'category' => [
         'name' => 'Nom',
@@ -75,13 +75,16 @@ return [
         'posts' => 'Articles',
         'delete_confirm' => 'Confirmez-vous la suppression de cette catégorie ?',
         'return_to_categories' => 'Retour à la liste des catégories',
-        'reorder' => 'Réorganiser les catégories'
+        'reorder' => 'Réorganiser les catégories',
+        'color' => 'rainlab.blog::lang.category.color',
+        'icon' => 'rainlab.blog::lang.category.icon',
     ],
     'menuitem' => [
         'blog_category' => 'Catégories du blog',
         'all_blog_categories' => 'Toutes les catégories du blog',
         'blog_post' => 'Articles du blog',
-        'all_blog_posts' => 'Tous les articles du blog'
+        'all_blog_posts' => 'Tous les articles du blog',
+        'category_blog_posts' => 'rainlab.blog::lang.menuitem.category_blog_posts',
     ],
     'settings' => [
         'category_title' => 'Liste des catégories',
@@ -119,6 +122,10 @@ return [
         'rssfeed_blog' => 'Page du blog',
         'rssfeed_blog_description' => 'Nom de la page principale du blog pour générer les liens. Cette propriété est utilisé par le composant dans le partial.',
         'rssfeed_title' => 'Flux RSS',
-        'rssfeed_description' => 'Génère un Flux RSS contenant les articles du blog.'
-    ]
+        'rssfeed_description' => 'Génère un Flux RSS contenant les articles du blog.',
+        'posts_order_type' => 'rainlab.blog::lang.settings.posts_order_type',
+        'posts_order_type_description' => 'rainlab.blog::lang.settings.posts_order_type_description',
+        'history_mode' => 'rainlab.blog::lang.settings.history_mode',
+        'history_mode_description' => 'rainlab.blog::lang.settings.history_mode_description',
+    ],
 ];
